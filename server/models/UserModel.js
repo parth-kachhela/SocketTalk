@@ -4,8 +4,8 @@ import { genSalt, hash } from "bcrypt";
 const userSchema = new mongoose.Schema({
   email: {
     type: String,
-    required: true,
-    unique: true,
+    required: [true, "email is reuqired"],
+    unique: [true, "email is have unique value"],
   },
   password: {
     type: String,
